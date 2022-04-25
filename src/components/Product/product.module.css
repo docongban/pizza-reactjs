@@ -1,0 +1,84 @@
+.image{
+    width: 100%;
+    height: 300px;
+    object-fit: contain; 
+    transition: all 0.2s ease-in-out;
+}
+.wrapper:hover{
+    cursor: pointer;
+}
+.wrapper:hover .title{
+    color: var(--primary-color);
+}
+.wrapper:hover .image{
+    transform: rotate(10deg);
+}
+.title{
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    font-weight: 800;
+    margin-top: 8px;
+    color: #111111;
+    overflow: hidden;
+    min-height: 43px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.description{
+    font-size: 1.2rem;
+    color: #333333;
+    font-weight: 600;
+    line-height: 2rem;
+    overflow: hidden;
+    min-height: 60px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+.bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.priceText{
+    font-size: 1.3rem;
+    color: #666666;
+    margin-bottom: 10px;
+}
+.amount{
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111111;
+}
+.button{
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: var(--active-color);
+    color: #fff;
+    border-color: var(--active-color);
+    transition: all 0.3s ease-in-out;
+}
+.button:hover .buttonText{
+    color: #fff;
+}
+.buttonText{
+    text-decoration: none;
+    font-size: 1.6rem;
+    margin: auto 0;
+    padding: 0px 10px;
+    color: var(--primary-color);
+}
+.buttonText:hover{
+    color: #fff;
+}
+.buttonIcon{
+    margin-right: 10px;
+}

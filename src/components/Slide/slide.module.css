@@ -1,0 +1,42 @@
+.slider{
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.image{
+    margin: 0 auto;
+    width: 1110px;
+}
+.btnPrev{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    z-index: 1;
+    color: #fff;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.btnItem{
+    width: 24px!important;
+    height: 24px!important;
+}
+.btnPrev:hover,
+.btnNext:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.btnNext{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    z-index: 1;
+    color: #fff;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+}
