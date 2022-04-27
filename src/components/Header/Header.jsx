@@ -15,9 +15,8 @@ function Header() {
     const [inputYourLocation, setInputYourLocation] = useState(true)
     const [inputStoreLocation, setInputStoreLocation] = useState(false)
     const [searchText, setSearchText] = useState('')
+    const [accountName, setAccountName] = useState('')
     const navigate = useNavigate()
-
-
 
     //cal API get all categories
     useEffect(() => {
@@ -48,6 +47,20 @@ function Header() {
         if (e.key === 'Enter') {
             navigate(`/search/${searchText}`)
         }
+    }
+
+    //get account token from localStorage
+    useEffect(() => {
+        // console.log(JSON.parse(localStorage.getItem('account')))
+        if(JSON.parse(localStorage.getItem('account'))){
+            setAccountName(JSON.parse(localStorage.getItem('account')).fullname)
+        }
+    }, [accountName])
+
+    // logout
+    const handleLogout = () => {
+        localStorage.removeItem('account')
+        navigate("/login")
     }
 
     return (
@@ -86,11 +99,19 @@ function Header() {
                         <div className={styles.account}>
                             <div className={styles.login}>
                                 <AccountCircleOutlined className={styles.accountIcon} />
-                                <a href="google.com" className={styles.accountText}>Đăng nhập</a>
+                                {
+                                    accountName ? 
+                                    (<Link to="/" className={styles.accountText}>{accountName}</Link>) : 
+                                    (<Link to="/login" className={styles.accountText}>Đăng nhập</Link>)
+                                }
                             </div>
                             <div className={styles.register}>
                                 <span className={styles.character}>/ </span>
-                                <a href="google.com" className={styles.accountText}>Tạo tài khoản</a>
+                                {
+                                    accountName ? 
+                                    (<div className={styles.accountText} onClick={handleLogout}>Đăng xuất</div>) : 
+                                    (<Link to="/register" className={styles.accountText}>Tạo tài khoản</Link>)
+                                }
                             </div>
                         </div>
                     </div>

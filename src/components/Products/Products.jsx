@@ -57,7 +57,7 @@ function Products() {
                     console.log(error)
                 })
         }
-    },[text])
+    })
 
 
     return ( 

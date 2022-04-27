@@ -97,6 +97,7 @@
     height: 20px!important;
 }
 .accountText{
+    cursor: pointer;
     text-decoration: none;
     color: inherit;
     font-size: 1.4rem;
